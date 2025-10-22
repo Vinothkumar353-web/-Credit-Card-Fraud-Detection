@@ -88,9 +88,5 @@ To build and evaluate machine learning models that can classify transactions as 
 While the Decision Tree classifier showed the best accuracy, it failed to effectively detect fraud due to severe class imbalance.  
 Future enhancements should focus on improving recall and generalization to ensure better fraud detection in real-world scenarios.
 
----
 
-**Author:** Vinothkumar S  
-📧 Email: [s.vino0651@gmail.com](mailto:s.vino0651@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/vino45/) | [GitHub](https://github.com/Vinothkumar353-web)
 
