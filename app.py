@@ -15,7 +15,6 @@ le = package["label_encoder"]
 @app.route("/")
 def home():
     return "Fraud Detection API Running"
-
 @app.route("/predict", methods=["POST"])
 def predict():
     try:
@@ -34,9 +33,10 @@ def predict():
         # If needed
         decoded_prediction = le.inverse_transform(prediction)
 
-        return jsonify({
-            "prediction": decoded_prediction[0]
-        })
+return jsonify({
+    "prediction": str(decoded_prediction[0])
+})
+
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
