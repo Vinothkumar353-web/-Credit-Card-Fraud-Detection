@@ -1,3 +1,21 @@
+from flask import Flask, request, jsonify
+import joblib
+import numpy as np
+
+app = Flask(__name__)
+
+
+# ✅ Load model package ONCE
+package = joblib.load("fraud_detection_model.joblib")
+
+model = package["model"]
+scaler = package["scaler"]
+le = package["label_encoder"]
+
+@app.route("/")
+def home():
+    return "Fraud Detection API Running"
+    
 @app.route("/predict", methods=["POST"])
 def predict():
     try:
@@ -24,3 +42,9 @@ def predict():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
+    
